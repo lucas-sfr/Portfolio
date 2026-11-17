@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel Lucas da Silva Franco - Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px;
+            background: #0a0a0a;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 60px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-tagline {
+            color: #00d4ff;
+            font-size: 1.1em;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 2em;
+            color: #888;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            padding: 15px 40px;
+            background: #00d4ff;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 15px 40px;
+            background: transparent;
+            color: #00d4ff;
+            text-decoration: none;
+            border: 2px solid #00d4ff;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        .skills {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            padding: 8px 20px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #00d4ff;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 4px solid #00d4ff;
+            object-fit: cover;
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.3);
+        }
+
+        .section {
+            padding: 80px 60px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+
+        .section-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .section-description {
+            color: #888;
+            font-size: 1.1em;
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        .how-i-work {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .work-step {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .work-step-number {
+            font-size: 3em;
+            color: #00d4ff;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .work-step h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .work-step p {
+            color: #888;
+        }
+
+        .career {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+        }
+
+        .career-summary {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            height: fit-content;
+        }
+
+        .career-summary h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+
+        .career-summary p {
+            color: #888;
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #333;
+        }
+
+        .timeline-item {
+            padding-left: 40px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background: #00d4ff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .timeline-date {
+            color: #00d4ff;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-position {
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .timeline-skills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-skill {
+            padding: 5px 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 15px;
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 80px 60px;
+            background: #111111;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+
+        .contact p {
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .contact-link {
+            padding: 15px 40px;
+            background: #1a1a1a;
+            color: #00d4ff;
+            text-decoration: none;
+            border: 2px solid #00d4ff;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background: #00d4ff;
+            color: #0a0a0a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .skills {
+                justify-content: center;
+            }
+
+            .career {
+                grid-template-columns: 1fr;
+            }
+
+            .how-i-work {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero h2 {
+                font-size: 1.5em;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .section {
+                padding: 60px 30px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#carreira">Carreira</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">DADOS • AUTOMAÇÃO • MELHORIA CONTÍNUA</p>
+            <h1>Michel Lucas da Silva Franco</h1>
+            <h2>Análise de Dados Júnior</h2>
+            <div class="hero-cta">
+                <a href="#projetos" class="btn-primary">Ver projetos</a>
+                <a href="#sobre" class="btn-secondary">Sobre mim</a>
+            </div>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Excel</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Power Automate</span>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Retrato profissional em camisa preta.png" alt="Michel Lucas da Silva Franco">
+        </div>
+    </div>
+
+    <div class="section" id="sobre">
+        <h2 class="section-title">SOBRE MIM</h2>
+        <h3 class="section-subtitle">Entender <strong>problemas</strong>, criar <strong>soluções</strong>.</h3>
+        <p class="section-description">
+            Sou analista de dados focado em transformar dados em insights estratégicos. Utilizo Python, Excel, Power BI e SQL para construir relatórios, dashboards e automações que otimizam processos e apoiam a tomada de decisão. Meu objetivo é tornar rotinas manuais em processos mais simples, confiáveis e eficientes.
+        </p>
+
+        <div class="how-i-work">
+            <div class="work-step">
+                <div class="work-step-number">01</div>
+                <h3>Entender o processo</h3>
+                <p>Análise detalhada do fluxo atual e identificação de gargalos.</p>
+            </div>
+            <div class="work-step">
+                <div class="work-step-number">02</div>
+                <h3>Simplificar o problema</h3>
+                <p>Quebra de problemas complexos em partes gerenciáveis.</p>
+            </div>
+            <div class="work-step">
+                <div class="work-step-number">03</div>
+                <h3>Construir a solução</h3>
+                <p>Desenvolvimento de automações e dashboards eficazes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="projetos">
+        <h2 class="section-title">PROJETOS</h2>
+        <h3 class="section-subtitle">Dashboards e Relatórios</h3>
+        <p class="section-description">
+            Confira alguns dos projetos de análise de dados e visualização que desenvolvi.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; margin-top: 40px;">
+            <div style="background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333;">
+                <img src="01 - CAPA.png" alt="Dashboard Capa" style="width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                <h4 style="color: #00d4ff; margin-bottom: 10px;">Painel Principal</h4>
+                <p style="color: #888;">Visão geral das métricas e indicadores chave</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333;">
+                <img src="02 - CONSOLIDADO.png" alt="Dashboard Consolidado" style="width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                <h4 style="color: #00d4ff; margin-bottom: 10px;">Visão Consolidada</h4>
+                <p style="color: #888;">Análise integrada de todos os dados</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333;">
+                <img src="06 - TME.png" alt="Dashboard TME" style="width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                <h4 style="color: #00d4ff; margin-bottom: 10px;">Análise TME</h4>
+                <p style="color: #888;">Tempo Médio de Execução e performance</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333;">
+                <img src="2 - VISA~O ME^S.png" alt="Visão Mensal" style="width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                <h4 style="color: #00d4ff; margin-bottom: 10px;">Visão Mensal</h4>
+                <p style="color: #888;">Evolução mensal dos indicadores</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333;">
+                <img src="RESUMO.png" alt="Resumo" style="width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                <h4 style="color: #00d4ff; margin-bottom: 10px;">Resumo Executivo</h4>
+                <p style="color: #888;">Síntese das principais informações</p>
+            </div>
+            <div style="background: #1a1a1a; padding: 25px; border-radius: 10px; border: 1px solid #333;">
+                <img src="Pa�gina 3.png" alt="Análise Detalhada" style="width: 100%; border-radius: 5px; margin-bottom: 15px;">
+                <h4 style="color: #00d4ff; margin-bottom: 10px;">Análise Detalhada</h4>
+                <p style="color: #888;">Informações complementares</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="carreira">
+        <h2 class="section-title">CARREIRA</h2>
+        <div class="career">
+            <div class="career-summary">
+                <h3>Resolver problemas, inovar, evoluir.</h3>
+                <p>
+                    Atuação em automação, processos e melhoria contínua para tornar o trabalho mais simples e confiável. Foco em desenvolvimento de soluções que geram valor real através da análise de dados e automação de processos.
+                </p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 - ATUAL</div>
+                    <div class="timeline-company">Global Hitss Brasil</div>
+                    <div class="timeline-position">Analista de Dados Júnior</div>
+                    <p class="timeline-description">
+                        Análise de dados para construção e atualização de relatórios e dashboards gerenciais e operacionais, apoiando a tomada de decisão estratégica. Desenvolvimento de automações para otimização de processos e ganho de eficiência, utilizando Python, Excel e Power BI. Foco na melhoria contínua, padronização das informações e facilitação da extração de dados.
+                    </p>
+                    <div class="timeline-skills">
+                        <span class="timeline-skill">Python</span>
+                        <span class="timeline-skill">Excel</span>
+                        <span class="timeline-skill">Power BI</span>
+                        <span class="timeline-skill">SQL</span>
+                        <span class="timeline-skill">Automação</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - 2025</div>
+                    <div class="timeline-company">Global Hitss Brasil</div>
+                    <div class="timeline-position">Assistente Backoffice I</div>
+                    <p class="timeline-description">
+                        Inspeção e validação de documentos de empresas contratantes, garantindo conformidade com políticas internas. Conferência de planos e serviços, verificação de termos de contrato e análise de linhas no sistema para tomada de decisão sobre aprovação ou ajustes necessários.
+                    </p>
+                    <div class="timeline-skills">
+                        <span class="timeline-skill">Análise</span>
+                        <span class="timeline-skill">Validação</span>
+                        <span class="timeline-skill">Processos</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2024</div>
+                    <div class="timeline-company">Viggo Negócios LTDA.</div>
+                    <div class="timeline-position">Auxiliar Administrativo Backoffice</div>
+                    <p class="timeline-description">
+                        Suporte estratégico ao time de vendas através de análise de crédito e verificação de viabilidade técnica. Responsável pela abertura e gestão de crédito, conferência e validação de documentos cadastrais, e atendimento a demandas financeiras.
+                    </p>
+                    <div class="timeline-skills">
+                        <span class="timeline-skill">Crédito</span>
+                        <span class="timeline-skill">Análise</span>
+                        <span class="timeline-skill">Backoffice</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contato">
+        <h2>CONTATO</h2>
+        <p>Interessado em colaborar? Entre em contato!</p>
+        <div class="contact-links">
+            <a href="https://br.linkedin.com/in/lucas-silva-6a62a1175" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="mailto:lucassfr445@gmail.com" class="contact-link">E-mail</a>
+            <a href="tel:+5519994492791" class="contact-link">Telefone</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Michel Lucas da Silva Franco. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
