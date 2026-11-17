@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Silva - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .linkedin-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .linkedin-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .cv-download {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cv-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .dashboard-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .dashboard-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .dashboard-item img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-item h3 {
+            color: #333;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Retrato profissional em camisa preta.png" alt="Lucas Silva" class="profile-photo">
+            <h1>Lucas Silva</h1>
+            <p>Analytics & Business Intelligence</p>
+            <a href="https://br.linkedin.com/in/lucas-silva-6a62a1175" target="_blank" class="linkedin-button">
+                LinkedIn Profile
+            </a>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Currículo</h2>
+                <a href="CV LUCAS.pdf" target="_blank" class="cv-download">
+                    📄 Baixar Currículo Completo
+                </a>
+            </div>
+
+            <div class="section">
+                <h2>Dashboards & Projetos</h2>
+                <div class="dashboard-grid">
+                    <div class="dashboard-item">
+                        <img src="01 - CAPA.png" alt="Dashboard Capa">
+                        <h3>Dashboard Principal</h3>
+                    </div>
+                    <div class="dashboard-item">
+                        <img src="02 - CONSOLIDADO.png" alt="Dashboard Consolidado">
+                        <h3>Visão Consolidada</h3>
+                    </div>
+                    <div class="dashboard-item">
+                        <img src="06 - TME.png" alt="Dashboard TME">
+                        <h3>Análise TME</h3>
+                    </div>
+                    <div class="dashboard-item">
+                        <img src="2 - VISA~O ME^S.png" alt="Visão Mensal">
+                        <h3>Visão Mensal</h3>
+                    </div>
+                    <div class="dashboard-item">
+                        <img src="RESUMO.png" alt="Resumo">
+                        <h3>Resumo Executivo</h3>
+                    </div>
+                    <div class="dashboard-item">
+                        <img src="Pa�gina 3.png" alt="Página 3">
+                        <h3>Análise Detalhada</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Lucas Silva. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
